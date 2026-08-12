@@ -6,6 +6,7 @@ class Solution {
         Map<Integer, Integer> map = new HashMap<>();
         for(int r=0;r<nums.length;r++){
             map.merge(nums[r], 1, Integer::sum);
+            //map.put(nums[r], map.getOrDefault(nums[r],0)+1);
 
             while(map.get(nums[r])>k){
                 map.merge(nums[l], -1, Integer::sum);
